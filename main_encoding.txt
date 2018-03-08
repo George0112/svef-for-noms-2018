@@ -1,0 +1,11 @@
+JSVM 9.19.15 Encoder
+
+
+
+profile & level info:
+=====================
+DQ=  0:  Main @ Level 4
+DQ=  1:  Scalable High @ Level 4
+DQ=  2:  Scalable High @ Level 4
+
+
