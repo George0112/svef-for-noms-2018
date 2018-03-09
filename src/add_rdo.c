@@ -24,15 +24,19 @@ int main(int argc, char **argv){
         exit(1);
     }
 
+    char check[2];
+
     while(fgets(buffer, 100, input)){
         int last = strlen(buffer);
-        buffer[last-1] = 0;
-        //fprintf(output, "%s", buffer);
-        //fprintf(output, "%d\n", );
-        printf("%s %d\n", buffer, rand()%4);
+        buffer[last] = 0;
+        fprintf(output, "%s %d\n", buffer, rand()%4);
+		fgets(buffer, 100, input);
     }
 
     fclose(input);
     fclose(output);
+
+	fprintf(stderr, "Success\n");
+	return(0);
 
 }
