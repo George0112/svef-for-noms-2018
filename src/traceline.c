@@ -63,6 +63,8 @@ traceline_parse_file(char *filename, struct rawtraceline **rawtracelinelist)
 						case 9:
 								sscanf(" 0 ", "%ms", &thisrt->timestamp);
 						case 10:
+								sscanf(" 0 ", "%ms", &thisrt->rdo);
+						case 11:
 								newrt =  (struct rawtraceline *) malloc(sizeof(struct rawtraceline));
 
 								/* double link */
@@ -89,7 +91,7 @@ traceline_parse_file(char *filename, struct rawtraceline **rawtracelinelist)
 						case 1:
 								free(&thisrt->startpos);
 						default:
-								fprintf(stderr, "Problem scanning tracefile.\n");
+								fprintf(stderr, "Problem scanning tracefile. scannedpars = %d\n", scannedpars);
 								thisrt->prev->next = NULL;
 								free(thisrt);
 								traceline_free_raw(rawtracelinelist);

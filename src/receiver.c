@@ -58,6 +58,23 @@ decodepacket(struct traceline *newtl, struct ourpacket *pkt, FILE *outvideofile)
 		else
 			newtl->truncatable = TRACELINE_NO;
 
+		switch((pkt->flags & RDO_MASK)){
+			case RDO_0:
+				newtl->rdo = 0;
+				break;
+			case RDO_1:
+				newtl->rdo = 1;
+				break;
+			case RDO_2:
+				newtl->rdo = 2;
+				break;
+			case RDO_3:
+				newtl->rdo = 3;
+				break;
+			default:
+				newtl->rdo = 0;
+		}
+
 		newtl->frameno = ntohs(pkt->frame_number);
 
 		//fprintf(stderr, "received: ");

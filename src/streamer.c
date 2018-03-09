@@ -257,6 +257,9 @@ main(int argc, char **argv)
 		traceline_parse_file(argv[1], &rt); // parse a trace file and return a list of rawtraceline. 
 		traceline_raws_to_normals(rt, &tl); 
 
+		// debug
+		fprintf(stderr, "finish parsing trace file\n");
+
 		i = tl;
 		if(i == NULL) 
 		{

@@ -65,6 +65,8 @@
 #define STREAMER_MASK_TRUNCATABLE 0x08
 #define STREAMER_MASK_TWONALUS 0x04
 
+#define RDO_MASK 0x03
+
 #define STREAMER_SLEEP_AFTER_STREAM 45
 
 typedef uint8_t streamer_onebyte_t;
