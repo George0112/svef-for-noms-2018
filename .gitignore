@@ -1,3 +1,7 @@
 *.yuv
 *.svc
 *.swp
+test\ videos/*
+BBB*
+*.264
+*.temp
