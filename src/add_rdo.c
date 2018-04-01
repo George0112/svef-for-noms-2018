@@ -51,8 +51,7 @@ int main(int argc, char **argv){
 		}else if(!strcmp(par, "V")){
 			fscanf(encode, "%lf", &nouse);
 			fscanf(encode, "%d", &size[i]);
-			printf(" i = %d, Y[i] = %lf, Y[i-1] = %lf, PSNR Difference = %lf, ratio = %lf\n",
-				 i, Y[i], i%4==0?0:Y[i-1], Y[i]-(((i%4)==0)?0:Y[i-1]), (Y[i]-(((i%4)==0)?0:Y[i-1]))/size[i]*1000000);
+			fprintf(stderr, "%lf %.0lf\n", Y[i]-(i%4==0?0:Y[i-1]), floor((Y[i]-(((i%4)==0)?0:Y[i-1]))/size[i]*1000000));
 			i++;
 		}
 	}
@@ -71,7 +70,7 @@ int main(int argc, char **argv){
 			fgets(buffer, 100, input);
 			int last = strlen(buffer);
 			buffer[last] = 0;
-			fprintf(output, "%s %lf\n", buffer, (Y[i]-(((i%4)==0)?0:Y[i-1]))/size[i]*1000000);
+			fprintf(output, "%s %.0lf\n", buffer, floor((Y[i]-(((i%4)==0)?0:Y[i-1]))/size[i]*1000000));
 			fgets(buffer, 100, input);
 			i++;
 		}

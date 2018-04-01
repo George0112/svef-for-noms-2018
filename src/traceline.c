@@ -246,7 +246,7 @@ traceline_raws_to_normals(struct rawtraceline *inlist, struct traceline **outlis
 						
 				out->timestamp = atol(in->timestamp);
 				out->frameno = atol(in->frameno);
-				out->rdo = atoi(in->rdo);
+				out->rdo = (short)atof(in->rdo);
 
 				outnew = (struct traceline *) malloc(sizeof(struct traceline));
 				out->next = outnew;

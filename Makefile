@@ -16,7 +16,7 @@ streamer: $(STR_OBJS)
 	$(CC) $(CFLAGS) $(STR_OBJS) -o streamer 
 
 add_rdo: $(RDO_OBJS)
-	$(CC) $(CFLAGS) $(RDO_OBJS) -o add_rdo
+	$(CC) $(CFLAGS) $(RDO_OBJS) -lm -o add_rdo
 
 receiver.o: $(SRCDIR)/receiver.c $(SRCDIR)/streamer.h
 	$(CC) $(CFLAGS) -c $(SRCDIR)/receiver.c

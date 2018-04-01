@@ -75,11 +75,13 @@ typedef uint32_t streamer_fourbytes_t;
 
 /*      0               8              16              24              32
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-        |      lid      |      tid      |      qid      |l|ty |d|t|2|rdo|
+        |      lid      |      tid      |      qid      |l|ty |d|t|2|res|
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         |                             naluid                            |
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         |           total size          |          frame number         |
+		+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		|              rdo				|								|
         +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         |                            payload                            |
         |                           .........                           |
@@ -96,6 +98,7 @@ struct ourpacket
 		streamer_fourbytes_t naluid;
 		streamer_twobytes_t total_size; /* in bytes */
 		streamer_twobytes_t frame_number; /* departing from 0 */
+		streamer_twobytes_t rdo;
 		streamer_onebyte_t payload[MAX_PAYLOAD];
 } __attribute__ ((packed));
 

@@ -116,6 +116,7 @@ buildpacket(struct traceline *tl, struct ourpacket *nalutosend, FILE *videofile)
 				nalutosend->flags |= STREAMER_NALU_NOT_TRUNCATABLE;
 
 		// rdo
+		/*
 		switch(tl->rdo){
 			case 0:
 				nalutosend->flags |= RDO_0;
@@ -130,6 +131,8 @@ buildpacket(struct traceline *tl, struct ourpacket *nalutosend, FILE *videofile)
 				nalutosend->flags |= RDO_3;
 				break;
 		}
+		*/
+		nalutosend->rdo = tl->rdo;
 	
 		nalutosend->naluid = htonl(tl->startpos);
 		nalutosend->frame_number = htons(tl->frameno);
