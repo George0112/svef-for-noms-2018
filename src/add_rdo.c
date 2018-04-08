@@ -58,13 +58,14 @@ int main(int argc, char **argv){
 
 	for(i = 0; i < 9; i++){
 		fgets(buffer, 100, input);
+		fprintf(output, "%s 0\n", buffer);
 		fgets(buffer, 100, input);
 	}
 
 	i = 0; j = 0;
 
     while(fgets(buffer, 100, input)){
-		fprintf(output, "%s 0\n", buffer);
+		fprintf(output, "%s 10000\n", buffer);
 		fgets(buffer, 100, input);
 		for(j = 0; j < 4; j++){
 			fgets(buffer, 100, input);
