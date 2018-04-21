@@ -25,13 +25,31 @@ for line in open('psnredit.txt'):
 	arr[0,c] = float(tmp)
 	c = c+1
 
-x = [i+1 for i in range(1,311)]
-y = arr[0,:]
+ava = np.mean(arr[0,0:249])
+mini = 100
+maxi = 0
+
+for i in range(250):
+	if(arr[0,i]>maxi):
+		maxi=arr[0,i]
+	if(arr[0,i]<mini):
+		mini=arr[0,i]
+	
+
+x = [i+1 for i in range(1,250)]
+y = arr[0,0:249]
 
 plt.plot(x,y)
-plt.axis([-1,c-1,-1,60])
-plt.xlabel('Frame Number')
-plt.ylabel('PSNR')
+plt.axis([-1,250,10,50])
+plt.xlabel('Frame',fontsize = 20)
+plt.ylabel('PSNR in dB',fontsize = 20)
+plt.hlines(ava,0,250,color="red",linestyles="dashed")
+plt.xticks(fontsize=12)
+plt.yticks(fontsize=14)
+
+plt.text(100,47,'Average:'+str(round(ava,2)),fontsize=16)
+plt.text(100,44,'Minimum:'+str(round(mini,2)),fontsize=16)
+plt.text(100,41,'Maximum'+str(round(maxi,2)),fontsize=16)
 
 plt.show()
 
