@@ -29,7 +29,7 @@ x = [i+1 for i in range(1,311)]
 y = arr[0,:]
 
 plt.plot(x,y)
-plt.axis([-1,c-1,-1,100])
+plt.axis([-1,c-1,-1,60])
 plt.xlabel('Frame Number')
 plt.ylabel('PSNR')
 
