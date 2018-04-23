@@ -132,7 +132,9 @@ buildpacket(struct traceline *tl, struct ourpacket *nalutosend, FILE *videofile)
 				break;
 		}
 		*/
+		fprintf(stderr, "rdo = %d\n", tl->rdo);
 		nalutosend->rdo = tl->rdo;
+		fprintf(stderr, "rdo = %d\n", nalutosend->rdo);
 	
 		nalutosend->naluid = htonl(tl->startpos);
 		nalutosend->frame_number = htons(tl->frameno);

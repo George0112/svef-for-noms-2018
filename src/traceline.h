@@ -76,7 +76,7 @@ struct traceline  /* a formatted line of the tracefile */
 		traceline_onebyte_t truncatable;
 		unsigned frameno;
 		unsigned long timestamp;
-		unsigned short rdo;
+		unsigned int rdo;
 		struct traceline *next;
 		struct traceline *prev;
 		struct rawtraceline *original;
