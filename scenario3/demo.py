@@ -52,6 +52,8 @@ plt.imshow(arr, interpolation='nearest', cmap=plt.cm.Pastel1, aspect='auto')
 plt.yticks(range(arr.shape[0]), labels, fontsize=20)
 #plt.plot(x,y,'rs')
 
+plt.vlines(90, -50, 400, color='blue', linestyles='dashed')
+plt.vlines(180, -50, 400, color='blue', linestyles='dashed')
 plt.axis([-1,240,-1,6])
 plt.xlabel('Frame',fontsize=18)
 plt.xticks(fontsize=12)
