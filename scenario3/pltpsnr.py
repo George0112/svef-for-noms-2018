@@ -47,7 +47,7 @@ plt.hlines(ava,0,250,color="red",linestyles="dashed")
 plt.xticks(fontsize=12)
 plt.yticks(fontsize=14)
 
-plt.text(100,47,'Average:'+str(round(ava,2)),fontsize=16)
+plt.text(100,47,'Average:'+str(round(ava,2)),fontsize=16,color='red')
 plt.text(100,44,'Minimum:'+str(round(mini,2)),fontsize=16)
 plt.text(100,41,'Maximum:'+str(round(maxi,2)),fontsize=16)
 plt.title(fig_title,fontsize=20);
