@@ -7,6 +7,6 @@ rm -f out-concealed.yuv
 sudo ./framefiller filteredtrace.txt 608256 240 out-filtered.yuv out-concealed.yuv
 echo $1_origin.yuv out-concealed.yuv
 ./PSNRStatic 704 576 $1_origin.yuv out-concealed.yuv > psnrtrace.txt	
-python demo.py $1
-python pltpsnr.py $1
+python demo.py $1 $2
+python pltpsnr.py $1 $2
 mplayer -loop 0 -demuxer rawvideo -rawvideo w=704:h=576 out-concealed.yuv

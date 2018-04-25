@@ -8,7 +8,7 @@ mpl.rcParams['lines.markersize'] = 1
 
 arr = np.zeros((1,310), dtype=float)
 c = 0;
-fig_title=str(sys.argv[1]);
+fig_title=str(sys.argv[2] + ' ' + sys.argv[1]);
 readFile = open('psnrtrace.txt')
 lines = readFile.readlines()
 readFile.close()

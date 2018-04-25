@@ -13,7 +13,7 @@ count_miss=0;
 undecode = np.zeros((1,310),dtype=int);
 undecode_pkt=0;
 miss_frame=0;
-fig_title=str(sys.argv[1])
+fig_title=str(sys.argv[2] + ' ' + sys.argv[1])
 
 #for i in range(4):
 #	arr[0][i] = 'layer%d' %i

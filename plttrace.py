@@ -8,7 +8,7 @@ mpl.rcParams['lines.markersize'] = 1
 
 arr = []
 c = 0
-for line in open('CREW52trace-rdo.txt'):
+for line in open('ICE52trace-rdo.txt'):
 	if(int(line.split()[10]) < 10000):
 		arr.append(int(line.split()[10]))
 		print line.split()[10]
